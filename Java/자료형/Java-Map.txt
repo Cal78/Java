@@ -1,0 +1,49 @@
+Map 자료형에는 HashMap, LinkedHashMap, TreeMap등의 인터페이스를 구현한 자료형이 있다.
+
+캐릭터를 예로 보면 "직업" = "전사", "체력" = "20" 등으로 구분할 수 있다.
+자바의 맵(Map)은 이러한 대응관계를 쉽게 표현할 수 있게 해주는 자료형이라고 생각하면 된다.
+
+맵(Map)은 사전과 비슷하다.
+즉 Character란 단어에 "선택", Item란 단어에 "도구" 라는 뜻이 서로 맞대어 붙듯이(부합) 되듯이 Map은 Key와 Value라는 것을 한 쌍으로 갖는 자료형이다.
+
+key: Character
+value: 선택
+
+key: Item
+value: 도구
+
+Map은 리스트나 배열처럼 순차적으로 해당 요소 값을 구하지 않고 key를 통해 value를 얻는다.
+설명 하자면 Item란 단어의 뜻을 찾기 위해 사전의 내용을 순차적으로 모두 검색하는 것이 아닌 Item이라는 단어가 있는 곳만을 보는 것이다.
+
+Method:
+
+[ put 메소드 ]
+HashMap<String, String> dictionary = new HashMap<String, String>
+dictionary.put("Character", "선택");
+dictionary.put("Item", "도구");
+
+key와 value가 String(문자열) 형태인 HashMap을 선언하고 항목값들을 넣어봤다.
+key와 value는 put 메소드를 이용하여 넣을 수 있다.
+
+[ get 메소드 ]
+key에 해당되는 value값을 얻기 위해서는 다음과 같이 코드 작성
+System.out.println(dictionary.get("Character"));
+출력은 "선택"이 나올 것이다. 즉 get 메소드를 이용하면 value값을 얻을 수 있다.
+System.out.println는 자바의 출력문이다.
+
+[ containsKey 메소드 ]
+containsKey 메소드는 맵(Map)에 해당 키가 있는지를 확인하여 그 결과값을 리턴(반환)한다.
+System.out.println(dictionary.containsKey("Item"));
+"Item" 이라는 키는 존재하므로 참인 true가 출력될 것이다.
+
+[ remove 메소드 ]
+remove 메소드는 맵(Map)의 항목을 삭제하는 메소드이다.
+즉 key값에 항목인 (key, value)를 삭제한 후 그 vlaue를 리턴(반환)한다.
+System.out.println(dictionary.remove("Character"))
+"Character"에 해당되는 항목 (key, value)가 삭제된 후 "선택"이 출력될 것이다.
+모든 항목을 제거하고 싶다면 clear() 메소드를 이용할 수 있다.
+
+[ size 메소드 ]
+size 메소드는 Map의 갯수를 리턴(반환)한다.
+System.out.println(dictionary.size);
+위에 remove 메소드를 통해 제거 했다면 "Character", "Item" 두 값을 가지고 있었지만 "Character" 항목이 제거 되었으므로 1이 출력될 것이다.
